@@ -8,14 +8,18 @@ import { Observable } from 'rxjs';
 })
 export class PokemonDataService {
 
-  dataUrl=""
+  dataUrl="http://localhost:3000/Team"
   constructor(private http: HttpClient) {}
 
-  GetAllPokemon(): Observable<Pokemon[]> {
+  GetAllTeam(): Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>(this.dataUrl);
   }
 
-  GetPokemonById(id: number): Observable<Pokemon> {
+  GetTeamById(id: number): Observable<Pokemon> {
     return this.http.get<Pokemon>(`${this.dataUrl}/${id}`);
+  }
+
+  CreateTeam(membres: Pokemon[]): Observable<Pokemon> {
+    return this.http.post<Pokemon>(this.dataUrl, membres);
   }
 }

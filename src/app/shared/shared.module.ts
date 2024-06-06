@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
 import { RouterLinkActive, RouterModule } from '@angular/router';
+import { HeroSectionComponent } from './hero-section/hero-section.component';
 
 
 
 @NgModule({
   declarations: [
-    CardComponent
+    CardComponent,
+    HeroSectionComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,8 @@ import { RouterLinkActive, RouterModule } from '@angular/router';
   ],
 
   exports: [
-    CardComponent
+    CardComponent,
+    HeroSectionComponent,
   ]
 })
 export class SharedModule { }

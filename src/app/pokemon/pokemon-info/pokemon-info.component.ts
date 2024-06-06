@@ -11,16 +11,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PokemonInfoComponent {
 
-  pokemon: Pokemon;
+  pokemon?: Pokemon;
   id: number;
 
   constructor(private PokemonApiService: PokemonApiService, private route: ActivatedRoute) {
-    this.route.params.subscribe((params) => {
-      this.id = params['id'];
-      this.PokemonApiService.GetPokemonById(this.id).subscribe((data) => {
-        this.pokemon = data;
+    this.route.params.subscribe(params => {
+      this.id = route.snapshot.params['id'];
+      console.log(this.id);
+      this.PokemonApiService.GetAllPokemon().subscribe((data: Pokemon[]) => {
+        this.pokemon = data.find(pokemon => pokemon.id == this.id);
       });
-    });
-      
-  }
+    })
+  };
+
 }

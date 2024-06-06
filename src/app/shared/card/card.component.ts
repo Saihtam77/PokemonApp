@@ -14,10 +14,10 @@ export class CardComponent {
   @Input() title?: string;
   @Input() texte?: string;
   
-  @Input() link?: string;
+  @Input() id?: number;
   
   @Input() btnText?: string;
-
+  
   @Input() pokemonTypes?: Pokemon['apiTypes'];
   
   constructor() {}
