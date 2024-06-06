@@ -1,0 +1,12 @@
+<section *ngIf="pokemons" class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+    <app-card 
+    *ngFor="let pokemon of pokemons"
+    [image]="pokemon.image"
+    [imageAlt]="pokemon.name"
+    [title]="pokemon.name"
+    [pokemonTypes]="pokemon.apiTypes"
+    >
+    </app-card>
+
+</section>
