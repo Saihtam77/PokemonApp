@@ -12,5 +12,10 @@
     "hide-files.files": [
         ".vscode",
         "node_modules"
-    ]
+    ],
+    "azureFunctions.deploySubpath": "bin/Release/net8.0/publish",
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.preDeployTask": "publish (functions)"
 }

@@ -1,0 +1,1 @@
+import{a as o,c as e,y as n}from"./chunk-KFEUM3WT.js";var c=(()=>{let t=class t{constructor(r){this.http=r,this.apiurl="https://pokebuildapi.fr/api/v1/pokemon/generation/1"}GetAllPokemon(){return this.http.get(this.apiurl)}};t.\u0275fac=function(a){return new(a||t)(e(n))},t.\u0275prov=o({token:t,factory:t.\u0275fac,providedIn:"root"});let i=t;return i})();export{c as a};
