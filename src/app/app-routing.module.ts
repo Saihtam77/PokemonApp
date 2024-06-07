@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'Pokedex', loadChildren: () => import('./pokemon/pokemon.module').then(m => m.PokemonModule) },
   { path: 'Pokedex/pokemon', loadChildren: () => import('./pokemon/pokemon.module').then(m => m.PokemonModule) },
   { path: 'Team', loadChildren: () => import('./team/team.module').then(m => m.TeamModule) },
+  { path: 'AzurePokemon', loadChildren: () => import('./azure-pokemon/azure-pokemon.module').then(m => m.AzurePokemonModule) },
 ];
 
 @NgModule({

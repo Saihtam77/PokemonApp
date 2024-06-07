@@ -5,8 +5,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AzureServiceService {
+
+  url = "https://pokemonbackend.azurewebsites.net/api/PokemonGet?code=4CTObHqOVg_0OQudsDdUTN8gO3kz0VyZfpmraY0yqapVAzFu0cEUsg%3D%3D";
+
+  constructor(private http: HttpClient) { }
   
-  url="https://cleandatabase.azurewebsites.net";
-  
-  constructor(private http:HttpClient) { }
+  getData() {
+    return this.http.get(this.url);
+  }
+
 }
+
+
