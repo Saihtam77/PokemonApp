@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Pokemon } from '../../../dataType/Pokemon';
 import { PokemonDataService } from '../../pokemon-data.service';
 
@@ -10,21 +10,17 @@ import { PokemonDataService } from '../../pokemon-data.service';
 export class TeamsConstructWindowComponent {
 
   membres: Pokemon[];
+  @Output() addMemberEvent = new EventEmitter<Pokemon>();
 
-  constructor(private teamService: PokemonDataService) {
+ 
 
-  }
-
-  AddMemberToTeam(pokemon:Pokemon){
+  constructor(private teamService: PokemonDataService) {}
+  
+  AddMember(pokemon: Pokemon){
     this.membres.push(pokemon);
     console.log(this.membres);
+    this.addMemberEvent.emit(pokemon);
   }
-
-  RemoveMember(pokemon:Pokemon){
-    this.membres = this.membres.filter((p) => p !== pokemon);
-   
-  }
-  
   SubmitTeam(){
     this.teamService.CreateTeam(this.membres).subscribe((team) => {
       console.log("Team created", team);
